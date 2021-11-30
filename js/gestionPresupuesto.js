@@ -32,7 +32,7 @@ function anyadirGasto(gastoAnyadido)
     gastos.push(gastoAnyadido);
 }
 
-function CrearGasto(descripcion, valor)
+function CrearGasto(descripcion, valor, fecha, ...etiquetas)
 {
     this.descripcion = descripcion;
 
@@ -45,11 +45,40 @@ function CrearGasto(descripcion, valor)
         this.valor = 0;
     }
 
+    if (fecha)
+    {
+        this.fecha = Date.parse(fecha);  
+    }   
+    else
+    {
+        this.fecha = Date.now(fecha);  
+    }
+
+    if (etiquetas === null)
+    {
+        this.etiquetas = [];
+    }
+    else
+    {
+        this.etiquetas = etiquetas;
+    }
+
+    this.mostrarGastoCompleto = function()
+    {
+        let fechaFormatoLocalizado = new Date(this.fecha);
+
+        let gasto = (`Gasto correspondiente a ${this.descripcion} con valor ${this.valor} €.\nFecha: ${fechaFormatoLocalizado.toLocaleString()}\nEtiquetas:\n- ${etiquetas.join ("\n- ")}\n`);
+
+        return gasto;
+    }
+
+    
     this.mostrarGasto = function()
     {
         let gasto = (`Gasto correspondiente a ${this.descripcion} con valor: ${this.valor} .`);
         return gasto;
     }
+    
 
     this.actualizarPresupuesto = function (actualizarDescripcion)
     {

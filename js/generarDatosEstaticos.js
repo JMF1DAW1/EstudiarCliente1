@@ -5,8 +5,8 @@ gesPres.actualizarPresupuesto(1500);
 
 gesPresWeb.mostrarDatoEnId("presupuesto", gesPres.mostrarPresupuesto());
 
-let g1 = new gesPres.CrearGasto("Compra carne", 23.44);
-let g2 = new gesPres.CrearGasto("Compra fruta y verdura", 14.25);
+let g1 = new gesPres.CrearGasto("Compra carne", 23.44, "2021-10-06", "casa", "comida");
+let g2 = new gesPres.CrearGasto("Compra fruta y verdura", 14.25, "2021-09-06", "supermercado", "comida");
 
 gesPres.anyadirGasto(g1);
 gesPres.anyadirGasto(g2);

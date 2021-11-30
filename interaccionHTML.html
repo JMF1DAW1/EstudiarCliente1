@@ -6,10 +6,22 @@
         <title>
             ESTUDIAR
         </title>
-        <link rel="stylesheet" href="css/estilos.css">
     </head>
     <body>
         <div id="aplicacion">
+            <div id="controlesprincipales">
+                <button type="button" id="actualizarpresupuesto">
+                    Actualizar presupuesto
+                </button>
+            
+            <button type="button" id="anyadirgasto">
+                Añadir gasto
+            </button>
+            <button type="button" id="anyadirgasto-formulario">
+                Añadir gasto (formulario)
+            </button>
+            <hr>
+        </div>
             <div id="presupuesto">
             </div>
                 <br>
@@ -21,19 +33,32 @@
                 <br>
             <div id="listado-gastos-completo">
             </div>
-
         </div>
-        <!--
-          <div id="aplicacion">      
-              <div id="controlesprincipales">
-                  <button type="button" id="actualizarpresupuesto">
-                      Actualizar presupuesto
-                  </button>
-              </div>
-          </div>
-          -->
+              
+        <template id="formulario-template">
+            <form>
+                <div class="form-control">
+                    <label for="descripcion">Descripción</label>
+                    <input type="text" name="descripcion" id="descripcion">
+                </div>
+                <div class="form-control">
+                    <label for="valor">Valor</label>
+                    <input type="number" step="0.01" name="valor" id="valor">
+                </div>
+                <div class="form-control">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" name="fecha" id="fecha">
+                </div>
+                <div class="form-control">
+                    <label for="etiquetas">Etiquetas</label>
+                    <input type="text" name="etiquetas" id="etiquetas">
+                </div>
+                <button type="submit">Enviar</button>
+                <button class="cancelar" type="button">Cancelar</button>
+            </form>
+        </template>
 
 
-          <script type="module" src="js/generarDatosEstaticos.js"></script>
+        <script type="module" src="js/generarDatosEstaticos.js"></script>
     </body>
 </html>
